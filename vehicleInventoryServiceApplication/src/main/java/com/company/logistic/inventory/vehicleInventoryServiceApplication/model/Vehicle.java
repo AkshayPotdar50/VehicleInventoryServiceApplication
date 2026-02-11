@@ -15,6 +15,9 @@ import java.util.List;
         name="vehicles",
         uniqueConstraints = {
                 @UniqueConstraint(name=" uk_vehicles_reg_no", columnNames ="registration_number")
+        },
+        indexes = {
+                @Index(name="idx_vehicle_status", columnList = "status")
         }
 )
 @Getter

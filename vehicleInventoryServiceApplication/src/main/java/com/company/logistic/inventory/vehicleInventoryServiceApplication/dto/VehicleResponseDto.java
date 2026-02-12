@@ -1,7 +1,7 @@
 package com.company.logistic.inventory.vehicleInventoryServiceApplication.dto;
 
+import com.company.logistic.inventory.vehicleInventoryServiceApplication.enums.VehicleStatus;
 import com.company.logistic.inventory.vehicleInventoryServiceApplication.enums.VehicleType;
-import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -11,33 +11,24 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class VehicleCreateRequestDto {
+public class VehicleResponseDto {
 
-    @NotBlank
-    @Size(max=50)
+    private Long vehicleId;
+
     private String registrationNumber;
 
-    @NotNull
     private VehicleType vehicleType;
 
+    private String manufacturer;
 
-   @Size(max=50)
-   private String manufacturer;
+    private String model;
 
+    private Integer capacity;
 
-   @Size(max=50)
-   private String model;
+    private VehicleStatus status;
 
-
-   @Positive
-   private Integer capacity;
-
-   @NotNull
-   @Future
     private LocalDate insuranceExpiryDate;
 
-   @NotNull
-   @Future
     private LocalDate permitExpiryDate;
 
 

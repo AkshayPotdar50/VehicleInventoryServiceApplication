@@ -2,8 +2,7 @@ package com.company.logistic.inventory.vehicleInventoryServiceApplication.servic
 
 import com.company.logistic.inventory.vehicleInventoryServiceApplication.dto.*;
 import org.springframework.data.domain.Page;
-
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 
 public interface VehicleService {
 

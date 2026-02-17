@@ -10,8 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
 
 @Service
 @RequiredArgsConstructor
@@ -72,11 +72,11 @@ public class VehicleServiceImpl implements VehicleService{
 
     @Override
     @Transactional(readOnly = true)
-    public Page<VehicleResponseDto> getVehiclesByStatus(String status, Pageable pageable) {
+    public Page<VehicleResponseDto> getVehiclesByStatus(String status, Pageable pageable ) {
 
         VehicleStatus vehicleStatus=VehicleStatus.valueOf(status.toUpperCase());
         return vehicleRepository
-                .findByStatus(vehicleStatus, pageable)
+                .findByStatus(vehicleStatus, (java.awt.print.Pageable) pageable)
                 .map(this::mapToResponse);
     }
 

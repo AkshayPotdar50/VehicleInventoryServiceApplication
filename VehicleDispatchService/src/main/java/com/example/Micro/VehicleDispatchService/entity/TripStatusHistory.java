@@ -1,5 +1,6 @@
 package com.example.Micro.VehicleDispatchService.entity;
 
+import com.example.Micro.VehicleDispatchService.enums.TripStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
